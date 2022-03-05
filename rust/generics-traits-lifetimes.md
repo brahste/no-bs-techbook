@@ -131,4 +131,6 @@ A thought on references: For any concrete (instantiated) data type, there exists
 
 ---
 
+The `'static` lifetime specifier indicates that the reference will exist for the entire life of the program.
+
 Stopped at Lifetime Elision...
