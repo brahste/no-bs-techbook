@@ -1,0 +1,6 @@
+[book]
+authors = ["Braden Stefanuk"]
+language = "en"
+multilingual = false
+src = "src"
+title = "no-bs-techbook"

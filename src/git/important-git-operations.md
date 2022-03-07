@@ -24,15 +24,12 @@ The above operation will merge `main` into `feature-branch`
 git checkout --track <remote-name>/<branch-name>
 ```
 
-If you want the local branch to have a different name than the remote branch then you can use
+## Adding a remote repository
 ```
 git remote add <remote-name> <repo-url>
-git fetch <remote-name>
-git checkout -b <local-branch-name> <remote-name>/<branch-name>
 ```
 
 ## Reversing a merge
-
 To reverse a merge to the commit directly before the merge occured
 ```
 git reset --merge ORIG_HEAD
@@ -41,6 +38,11 @@ git reset --merge ORIG_HEAD
 To reverse to a specific commit
 ```
 git reset --merge <commit-sha>
+```
+
+## Reversing a commit
+```
+git revert <commit-sha>
 ```
 
 ## Deleting local branch once remote branch is merged and deleted
@@ -59,3 +61,11 @@ git checkout main
 git merge origin/main
 git branch -d <branch>    // short for --delete
 ```
+
+## Deleting local and remote branch
+```
+git push -d <remote_name> <branch_name>     // deletes remote branch
+git branch -d <branch_name>                 // deletes local branch
+```
+
+If this complains that the branch may not be complete merged, use the `-D` option. Use with caution.
