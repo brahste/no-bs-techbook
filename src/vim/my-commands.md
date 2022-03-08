@@ -34,14 +34,19 @@
     - `u` - Convert all characters to lowercase
     - `U` - Convert all characters to uppercase
     - `~` - Switch captialization of all characters
-*** 
+--- 
 - `Ctrl-w` - Enter window adjustment mode
     - `s` - Horizontal split
     - `v` - Vertical split
     - `q` - Close active window
     - `w` - Go to next window
     - `j`/`k`/`h`/`l` - Move to window in direction
-***
+---
+- `:split` - Splits horizontally
+- `:vsp` - Splits vertically
+- `:so <file>` - Sources the file
+
+---
 - `/<expression>` - Search current document for `<expression>`
 
 - `:%s/<expression>/<replace>/<option>` - Replaces all occurances of `<expression>` with `<replace>`
@@ -58,6 +63,12 @@
     - Opens window showing references/occurances of the object
 - `Ctrl-o` - Move backwards in the jumplist (useful for exiting go to commands)
 - `Ctrl-i` - Move forwards in the jumplist 
+
+---
+- `zo` - Open current fold
+- `zc` - Close current fold
+- `zR` - Open all folds
+- `zM` - Close all folds
 
 ## Managing Files, Windows, and Tabs
 
