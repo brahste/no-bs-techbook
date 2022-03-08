@@ -1,4 +1,16 @@
-# Using Command Line Arguments
+# Using Command Line Arguments and Environments
+
+The standard library package for working with the envrionment is `std::env`.
+
+Access user's environment variables
+```rust-lang
+let env_var = env::var("VARIABLE");
+```
+
+Or check the presence of an enviornment variable
+```rust-lang
+let env_var_exists: bool = env::var("VARIABLE").is_err();
+```
 
 # Method 1: Manual
 
