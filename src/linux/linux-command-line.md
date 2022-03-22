@@ -4,17 +4,36 @@
 
 - `-type X` indicate the type of object trying to be found, options include `f` for file, `d` for directory 
 
-
 ## Networks and File Transfers
 
 `scp`
 
 - Secure file copy over SSH
-Usage:
+  Usage:
 
 ## Monitoring System Processes
 
+Every program on your system is running in a *process*. Each process has an associated process ID (PID). The PID is required when issing a command such as `kill` or `nice`. Processes are also run with a controlling terminal (TTY). If a process doesn't have a controlling terminal (e.g. they were initialized at boot time) are shown with `?`. Processes also have a CPU time (TIME), which denotes the amount of CPU time used by the process (different that run time). Each processes is initialized with a specific command (CMD).
+
+`ps`
+
+- This command gives a user access to view relevant information about processes running on a system.
+
+    `x`: View all processes associated with the current user.
+
+    `e`: View all processes in the system.
+
+    `H`: Shows process heirarchy.
+
+    `aux`: Combines the `a`, `u`, and `x` commands. Useful for majority of                                troubleshooting tasks.
+
 `top` or `htop`
+
+- This command provides much of the same information `ps aux` provides, but it dynamically updates and provides a quasi-graphical interface for a user to interact with to filter/manage system processes.
+
+`kill`: to be filled
+
+`nice`: to be filled.
 
 ## Working with Symbolic Links
 
