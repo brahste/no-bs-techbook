@@ -4,6 +4,18 @@
 
 - `-type X` indicate the type of object trying to be found, options include `f` for file, `d` for directory 
 
+## Disks and Block Devices
+
+`df`
+
+- Short for *disk free*, use this command to display free disk space and other information on mounted block devices
+  
+  `-h`: Uses a human readable format.
+  
+  `-i`: Shows information about inodes.
+  
+  `<path_to_directory_or_file>`: Shows the file system and usage statistics for a given file or directory.
+
 ## Networks and File Transfers
 
 `scp`
@@ -36,6 +48,12 @@ Every program on your system is running in a *process*. Each process has an asso
 `nice`: to be filled.
 
 ## Working with Symbolic Links
+
+`ln`
+
+- Use this command to create symbol/soft links
+
+**Example**
 
 To create a symbolic link use the command `ln -s <link-target> <symbolic-link>`.
 To see your symbolic links you can use the `ls -lah` command. This will show the name of the link (`<symbolic-link>`) and the object its linked to (`<link-target>`).
