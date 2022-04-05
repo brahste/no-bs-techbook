@@ -10,8 +10,9 @@ Place unit tests in the files with the code they're testing. Create a module (wi
 For example, the snippet below shows three different ways you can write and control unit tests.
 
 ```rust-lang
+#[cfg(test)]
 mod tests {
-    use super::*  // <- May no be necessary
+    use super::* 
     
     #[test]
     fn test_one() {
@@ -32,3 +33,10 @@ mod tests {
     }
     
 }
+```
+
+Note the call to `use super::*` brings objects in the parent module into the scope of the `tests` module. This allows private functions to be unit tested. While some methodologies argue that private functions shouldn't be tested, Rust remains agnostic on this matter and allows developers to test private functions in this way if they like.
+
+## Integration Tests
+
+Place integration tests in the _tests/_ directory.
