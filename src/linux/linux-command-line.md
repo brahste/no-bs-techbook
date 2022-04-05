@@ -4,6 +4,34 @@
 
 - `-type X` indicate the type of object trying to be found, options include `f` for file, `d` for directory 
 
+## Working with Compilers
+
+When you program in C or C++, your compiler takes your program and turns them into binary executables. Sometimes it's udeful to look inside a binary. To view a binary you can use the *bless* hex editor.
+
+`strings <file>`
+
+- Prints the strings in the binary `<file>` to stdout 
+
+`readeld --symbols <file>`
+
+- Prints all of the symbols in the binary, including what they are (functions, objects, etc.), their sizes, and their memory addresses.
+
+`objdump -t <file>`
+
+- Displays very similar information to `readelf --symbols`
+
+`objdump -s <file>`
+
+- Displays information about the various sections in your binary. The most relevant are usually the *text* segment (where most of your code goes) and *rodata* segment (contains most of your static strings). Segments are segments of memotry, sections are logical sub-peices
+
+`objdump -d <file>`
+
+- Dissassembles the binary into assembly
+
+`objdump -p <file>`
+
+- Displayed object format specific headers. Useful for viewing the dependencies that are given to your program at compile time.
+
 ## Disks and Block Devices
 
 `df`
