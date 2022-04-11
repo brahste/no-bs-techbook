@@ -51,9 +51,19 @@ git reset --merge <commit-sha>
 
 ## Reversing a commit
 
+The following command will revert the current branch from the HEAD to the commit referenced by the *commit-sha*.
+
 ```
-git revert <commit-sha>
+git revert --no-commit <commit-sha>..HEAD
 ```
+
+To reverse a commit before its been pushed
+
+```
+git reset --soft HEAD~<N>
+```
+
+Where `<N>` is the number of commits relative to the current head you wish your reverse to point to.
 
 ## Deleting local branch once remote branch is merged and deleted
 
