@@ -39,7 +39,7 @@
   - [Important Macros](rust/important-macros.md)
   - [Error Handling](rust/error-handling.md)
   - [Initializing New Projects](rust/initializing-new-projects.md)
-  - [Pro Strats](rust/pro-strats.ms)
+  - [Pro Strats](rust/pro-strats.md)
   - [Reading from Files](rust/reading-from-files.md)
   - [Rust Best Practices](rust/rust-best-practices.md)
   - [Using Command Line Arguments](rust/using-command-line-arguments.md)
