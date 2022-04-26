@@ -23,10 +23,22 @@ git merge main
 
 The above operation will merge `main` into `feature-branch`
 
+## Merge with Squash
+```
+git merge --squash <branch-being-merged>
+```
+
 ## Creating a local branch from an existing remote branch
 
 ```
 git checkout --track <remote-name>/<branch-name>
+```
+
+## Creating Branch from Other Local Branch
+Sometimes it is useful to branch off another branch that isn't currently checked out. The following command achieves this.
+
+```
+git branch <new-branch> <existing-branch>
 ```
 
 ## Adding a remote repository
