@@ -22,17 +22,19 @@ will change the amount of compile-time optimizations to 1 instead of the default
 
 ## Documentation Comments
 
-To make documentation comments use three slashes `///`. This notation provides markdown support. Docmentaion comments that use `///` are compiled into HTML using `cargo doc`. The generated HTML can be found in the *target/doc* directory. A handy tool is `cargo doc --open` try it out. Another type of documentation comment that should be placed at the top of crates or modules to introduce them use `//!`.
+To make documentation comments use three slashes `///`. This notation provides markdown support. Docmentaion comments that use `///` are compiled into HTML using `cargo doc`. The generated HTML can be found in the *target/doc* directory. A handy tool is `cargo doc --open` try it out. 
 
-Common Documentation Sections:
+There's another type of documentation comment: `//!`. This doc comment should be placed at the top of crates (e.g. at the top of the *src/lib.rs* file) and modules to introduce them.
 
+#### Common Documentation Sections
 - Examples
 - Panics
 - Errors
 - Safety
 
-One of the coolest features in rust is that any code blocks will be run **as tests** so that you know if a code change has broken an example in your documentation. Issuing `cargo test`, there will be a section at the bottom that looks as follows.
-```
+### Documentation Tests
+One of the coolest features in Rust is that any code blocks in a doc comment will be run **as tests**. This way, you know if a code change has broken an example in your documentation. Issuing `cargo test`, there will be a section at the bottom that looks as follows,
+```rust
    Doc-tests my_crate
 
 running 1 test
@@ -40,5 +42,7 @@ test src/lib.rs - your_test (line 5) ... ok
 
 test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.27s
 ```
-Just make sure that your doc-test has an assert.
+Just make sure that your doc test has an assert.
+
+... Stopped at 14.2 Exporting a Convenient Public API with pub use ...
 

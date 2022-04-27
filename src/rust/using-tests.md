@@ -26,7 +26,7 @@ Place unit tests in the files with the code they're testing. Create a module (wi
 mod tests {
     #[test]
     fn test1() {
-    
+
     }
 }
 ```
@@ -38,15 +38,14 @@ In Rust there are a few types of test that can be used:
 2. Panic tests: These are tests that ensure that the program will panic if it is used incorrectly. To use these type of tests add the `#[should_panic]` attribute to the test. To make these tests more precise you can also add an expected substring to the attribute such as `#[should_panic(expected = "Cannot divide")]`. In this case, if the test panics with a message of *"Cannot divide by zero"*, then this test will pass, oterhwise it will fail.
 
 3. Result tests: These tests operate similar *assert tests*, but instead return a `Result<T, E>` type. If during the execution of the test an `Err` variant is returned, the test fails. This type of test allows you to use the `?` operator to conveniently return an error variant, thus failing the test.
-   
+
 4. Ignoreable tests: These tests can be of the same type as any of the above, but can be optionally ignored by annotating it with the `#[ignore]` tag. To run only the ignored tests use `cargo test -- --ignored`.
-   
-   
+
 **Example**
 
 For example, the snippet below shows three different ways you can write and control unit tests.
 
-```rust-lang
+```rust
 #[cfg(test)]
 mod tests {
     use super::*
@@ -103,7 +102,7 @@ By using non-test functions as helpers to the testable ones, a test framework pa
 
 You want to use a library from logging in your unit tests. The crate's *log* and *env_logger* together with will do the trick.
 
-```
+```rust
 use log;
 use env_logger;
 
@@ -123,7 +122,7 @@ mod tests {
         init();   
         log::debug!("Debug message from test 1")
     }   
- 
+
     #[test]   
     fn test_2() {   
         init();   
@@ -146,14 +145,14 @@ Each file in the *tests/* directory is compiled as a seperate crate.
 
 ### Framework Pattern for Integration Tests
 
-By seperating utility code into another crate in the *tests/* directory, commonly used setup logic can be used across integration tests, but there's a trick. You have to setup the utility module with the structure *tests/utilities/mod.rs*, where *utilities/* can be whatever module name you prefer (e.g. *common/*). When you setup the files this way, Rusts test compiler doesn't include these files when compiling the integration tests. Of course, the module still has to be brought into scope on the integration tests themselves.
+By seperating utility code into another crate in the *tests/* directory, commonly used setup logic can be used across integration tests, but there's a trick. You have to setup the utility module with the structure *tests/utilities/mod.rs*, where *utilities/* can be whatever module name you prefer (e.g. *common/*). When you setup the files this way, Rust's test compiler doesn't include these files when compiling the integration tests. Of course, the module still has to be brought into scope in the integration tests themselves.
 
 **Example**
 
-```
+```rust
 use your_crate;
 
-mod utilities;
+mod utilities;  // <-- This a helper module in utilities/mod.rs
 
 #[test]
 fn test_1() {
@@ -172,4 +171,9 @@ You can select which tests to run by providing a test name or substring of a set
 - `cargo test -- --show-output`: Shows output from the tests (by defaul, any output to stdout or stderr is captured by the test runner and hidden).
 - `cargo test -- --include-ignored`: Run all of the tests, including the ones tagged with `#[ignore]`.
 - `cargo test --test integration_test1`: Will run only the tests contained in the *tests/integration_test1.rs* file.
+
+## Additional Notes
+
+- By nature of Rust, you can't make integration tests for binary crates (crates that only have a *src/main.rs* file and don't have a *src/lib.rs* file). This is why many crates will have a basic *src/main.rs* file, while the crate's functionality is exposed with `use` statements in its *src/lib.rs*. This way, the functionality can be tested in the *test/* directory. 
+
 
