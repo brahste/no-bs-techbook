@@ -29,7 +29,7 @@ The essential usage of `update-alternatives` relies on three commands
 
 `update-alternatives --config <name>`
 
-- `<link>` is the location where you are placing the symbolic link the program. This link should point to somewhere in your *PATH* (preferably in */usr/local/bin*).
+- `<link>` is the location where you are placing the symbolic link, the program. This link should point to somewhere in your *PATH* (preferably in */usr/local/bin* or */home/<user>/local/.bin* (a personal favourite of mine)).
 
 - `<name>` is the name given to the program. This should be the command line usage you're familiar with (e.g. `python`, `gcc`, etc.).
 

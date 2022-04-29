@@ -53,3 +53,9 @@ include(CPack)
 
 set_target_properties(${CMAKE_PROJECT_NAME} PROPERTIES ENABLE_EXPORTS 1)
 ```
+
+## The sources.list file and sources.list.d directory
+
+The */etc/apt/sources.list* file is the file that outlines to repositoires that apt searches for updates and packages.
+
+By placing other *list* files in the */etc/apt/sources.list.d/* directory then chagnes to the available repos on your system can be made without touching the central */etc /apt/sources.list* file. If you're on Ubuntu 22 and need your packages seached in the Ubuntu 20 repo, change the places where is says *jammy* to *bionic*.

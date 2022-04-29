@@ -4,7 +4,6 @@ My typical computer setup has a number of specific software packages and systems
 
 0. Essentials
   - Terminator
-  - build-essential
   - zsh: `sudo apt install zsh`
   - git: `sudo apt install git`
   - Oh my ZSH: `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
@@ -18,9 +17,15 @@ My typical computer setup has a number of specific software packages and systems
   - powerlevel10k
   - Nerdfonts
     - Jetbrains mono, use the isntall script URL?
+    - Meslo
 2. Neovim
 7. Wireshark
 8. Dotfiles: https://www.atlassian.com/git/tutorials/dotfiles
 9. File structure
   - applications
-  - dev
+  - proj (will be renamed to dev in the future)
+10. C/CPP development
+  - build-essential
+  - clang-tools (latest stable)
+  - clangd in PATH (update alternatives)
+  - lcov, gcovr (code coverage)
