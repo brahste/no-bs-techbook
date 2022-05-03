@@ -25,3 +25,7 @@ CustomChildClass ccc = CustomChildClass();
 // In the next line a CustomChildClass can be passed since it inherits from CustomBaseClass
 map.insert(std::pair<std::string, CustomChildClass>("a", ccc)); 
 ```
+## Virtual Inheritance
+*Virtual inheritance* enforces that only one copy of a base class's members will be inherited in a grandchild class (second-level derivative).
+> Links:
+> - https://www.sandordargo.com/blog/2020/12/23/virtual-inheritance

@@ -52,4 +52,6 @@ Incomplete...
 
 Incomplete...
 
+### override
+The override specifier is applied to a member function of a class and is used to ensure that the function is virtual and is overriding a virtual function from a base class. If this isn't true a sompile-time error is thrown.
 

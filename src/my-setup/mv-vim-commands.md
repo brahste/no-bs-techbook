@@ -35,16 +35,10 @@
     - `U` - Convert all characters to uppercase
     - `~` - Switch captialization of all characters
 --- 
-- `Ctrl-w` - Enter window adjustment mode
-    - `s` - Horizontal split
-    - `v` - Vertical split
-    - `q` - Close active window
-    - `w` - Go to next window
-    - `j`/`k`/`h`/`l` - Move to window in direction
----
-- `:split` - Splits horizontally
-- `:vsp` - Splits vertically
-- `:so <file>` - Sources the file
+- `dw` - Delete word from cursor to end of word
+- `diw` - Delete whole word with cursor on any character
+- `b` - Go to beggining or word
+- `e` - Go to end of word
 
 ---
 - `/<expression>` - Search current document for `<expression>`
@@ -75,4 +69,15 @@
 - `F2` - Open _Nerd Tree_ file explorer (or `:NERDTree`)
 - `\ff` - Open _Telescope_ file finder (or `:Telescope file_finder`)
 - `\fg` - Open _Telescope_ live grep (or `:Telescope live_grep`) 
+---
+- `Ctrl-w` - Enter window adjustment mode
+    - `s` - Horizontal split
+    - `v` - Vertical split
+    - `q` - Close active window
+    - `w` - Go to next window
+    - `j`/`k`/`h`/`l` - Move to window in direction
+---
+- `:split` - Splits horizontally
+- `:vsp` - Splits vertically
+- `:so <file>` - Sources the file
 
