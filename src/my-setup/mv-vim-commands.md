@@ -39,7 +39,8 @@
 - `diw` - Delete whole word with cursor on any character
 - `b` - Go to beggining or word
 - `e` - Go to end of word
-
+- `gg` - Go to first line
+- `Shft-g` - Go to last line
 ---
 - `/<expression>` - Search current document for `<expression>`
 
@@ -66,7 +67,7 @@
 
 ## Managing Files, Windows, and Tabs
 
-- `F2` - Open _Nerd Tree_ file explorer (or `:NERDTree`)
+- `F2` - Open tree file explorer (or `:NERDTree`)
 - `\ff` - Open _Telescope_ file finder (or `:Telescope file_finder`)
 - `\fg` - Open _Telescope_ live grep (or `:Telescope live_grep`) 
 ---
@@ -77,7 +78,7 @@
     - `w` - Go to next window
     - `j`/`k`/`h`/`l` - Move to window in direction
 ---
-- `:split` - Splits horizontally
+- `:sp` - Splits horizontally
 - `:vsp` - Splits vertically
 - `:so <file>` - Sources the file
 

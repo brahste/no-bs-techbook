@@ -10,7 +10,7 @@
   - [Using Inheritance](cpp/inheritance.md)  
   - [Key Keywords](cpp/key-keywords.md)
   - [Mutexes and Lock Guards](cpp/mutexes_and_lock_guards.md)
-  - [Return Best Practices](cpp/return-best-practices.md)
+  - [Return Best Practices](best-practices.md)
   - [Using Smart Pointers](cpp/smart-pointers.md)  
   - [Tests and Mocks](cpp/tests-and-mocks.md)
   - [Using PkgConfig with CMake](cpp/using-pkg-config-with-cmake.md)

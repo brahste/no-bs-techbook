@@ -118,12 +118,26 @@ Write a mock class by inheriting from the class you intend to mock and use the `
 - **Important note:** gMock requires expectations to be set **before** the mock functions are called, otherwise the behavior is **undefined**. Do not alternate between calls to `EXPECT_CALL()` and calls to the mock functions, and do not set any expectations on a mock after passing the mock to an API.
 - Note that mocks don't have implementations, instead they shadow the implementation that you give them by specifying what they will return and how they will act.
 - You should run tests on virtual base classes, since the mocks themselves don't have any implementation, this is the best way to mock the functionality.
+- Careful to not use unprotected commas in your custom mocks
+- All MOCK_METHODS must be publicly accessible
+- If you don’t mock all versions of the overloaded method, the compiler will give you a warning about some methods in the base class being hidden. To fix that, use `using` to bring them in scope
+- While it is advisable to mock virtual methods. It is also possible to mock non-virtual methods.
 
 ### Setting Expectations
-The keyt to being good with mocks is to set the correct expectations on them.
-**(Note that the destructor of must be virtual, as is the case for all classes you intend to inherit from - otherwise the destructor of the derived class will not be called when you delete an object through a base pointer, and you’ll get corrupted program states like memory leaks.)**
+The key to being good with mocks is to set the correct expectations on them.
 
+### Types of Mocks
+When a mock method is called but isn't set with expectations using `EXPECT_CALL()` an "uninteresting call" is made as specified by its `ON_CALL()` specification. By default, when a uninteresting call is made, a warning is emitted.
+- To ignore these warning, wrap your mock object in a `NiceMock<T>` class.
+- To make these warnings failures, wrap your mock object in a `StrictMock<T>` class.
+- By default, your mocks are wrapped in a `NaggyMock<T>` class, which is why a warning is emitted when an uninteresting call is made.
 
+Recommendation is that one should use `NaggyMock` for designing and debugging tests, `NiceMock` most of the time, and `StrictMock` only when it is absolutely required.
+
+#### Mocking Functions
+see https://github.com/google/googletest/blob/d9c55a48eddbc92434454ac2b28771870750e616/googlemock/docs/cook_book.md#mock-stdfunction-mockfunction
+
+Use `MockFunction` which has a `Call(...args)` and `asStdFunction()`
 
 
 
