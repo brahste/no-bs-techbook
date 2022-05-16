@@ -6,7 +6,7 @@
   - [How to Write a Software Design Document](design/how-to-write-a-software-design-document.md)
 - [C++](cpp/README.md) 
   - [Building from Source](cpp/building-from-source.md)
-  - [CMake Cheatsheet](cpp/cmake-cheatsheet.md)
+  - [CMake Cheatsheet](cmake-best-practices.md)
   - [Using Inheritance](cpp/inheritance.md)  
   - [Key Keywords](cpp/key-keywords.md)
   - [Mutexes and Lock Guards](cpp/mutexes_and_lock_guards.md)
